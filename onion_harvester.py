@@ -44,7 +44,7 @@ def harvester (website):
     print('[+] scan ' + website.rstrip())
     try:
         page = requests.get(website.rstrip())
-        onions = re.findall('([0-9a-z]{16}).onion', page.text)
+        onions = re.findall('([2-7a-z]{16}).onion', page.text)
         harvest.extend(onions)
     except requests.exceptions.RequestException as e:
         print('[-] Error: ' + str(e)) 
